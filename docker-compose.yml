@@ -1,0 +1,12 @@
+version: '3'
+services:
+  cdn:
+    image: nginx:1.21.5-alpine
+    ports:
+      - 80:80
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/conf.d/cdn.conf:/etc/nginx/conf.d/cdn.conf
+      - ./nginx/assets:/usr/share/nginx/html/assets
+      - ./nginx/log:/var/log/nginx
+    container_name: cdn
