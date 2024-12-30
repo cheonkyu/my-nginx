@@ -1,2 +1,4 @@
 ./nginx/log/*
 .env
+*/node_modules
+*.lock
